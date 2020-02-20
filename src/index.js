@@ -1,12 +1,10 @@
+exports.min = array => checkIfValid(array) ? Math.min(...array) : 0;
 
-exports.min = function min (array) {
-  return 0;
-}
+exports.max = array => checkIfValid(array) ? Math.max(...array) : 0;
 
-exports.max = function max (array) {
-  return 0;
-}
+exports.avg = array => checkIfValid(array) ? array.reduce((a, b) => a + b, 0) / array.length : 0;
 
-exports.avg = function avg (array) {
-  return 0;
-}
+const checkIfValid = arr => arr != null && arr.hasElements();
+
+Array.prototype.hasElements = () => !(this.length === 0);
+
